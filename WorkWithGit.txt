@@ -1,0 +1,153 @@
+\documentclass[a4paper]{report}
+%Begin: Thêm các package cần thiết%
+\usepackage[utf8]{vietnam} %Gói dùng tiếng Việt%
+\usepackage[left=3.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}  %Gói canh lề%
+\usepackage{draftwatermark} %Gói watermark%
+\usepackage{minitoc} %Gói mục lục động %
+\usepackage{xurl} 
+\usepackage{scrextend}
+%End: Thêm các package cần thiết%
+\changefontsizes{16pt}
+\setlength{\parindent}{0pt}
+%Begin: Thêm watermark%
+\SetWatermarkAngle{45}
+\SetWatermarkColor[gray]{0.97}
+\SetWatermarkFontSize{5cm}
+\SetWatermarkText{KNNN EZI}
+%End: Thêm watermark%
+
+\begin{document}
+\begin{titlepage}
+%Begin: Bìa%
+\begin{center}
+    \vspace{5pt}
+    \textbf{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}
+    \vspace{5pt}
+    \textbf{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN}
+\end{center}
+
+\vspace{5pt}
+
+\begin{center}
+    \includegraphics[scale=0.3]{UIT.jpg}
+    \vspace{10pt}
+    \fontsize{15pt}{15pt}\selectfont
+
+    \begin{flushleft}
+    \fontsize{15pt}{15pt}\selectfont  
+    \textbf{\textsl{MÔN HỌC:}~~~~~~{KỸ NĂNG NGHỀ NGHIỆP}}
+    \end{flushleft}
+\end{center}
+
+
+\begin{flushleft}
+    \fontsize{15pt}{15pt}\selectfont  
+    \textbf{\textsl{ĐỀ TÀI:}~~~~~~~~~~{LÀM QUEN VỚI GITHUB}}
+\end{flushleft}
+
+
+\vspace{15pt}
+\textbf{GV hướng dẫn: Thái Huy Tân}
+
+\vspace{10pt}
+\textbf{Nhóm sinh viên thực hiện:}
+\begin{tabbing}
+\hspace{9cm}\=\hspace{3cm}\=\ \kill
+{\it \textbf{Họ và tên}}\>{\it \textbf{MSSV}}\>\\
+\begin{bfseries}Võ Thanh Nhàn\end{bfseries}\> \begin{bfseries}22521009\end{bfseries}\\
+\begin{bfseries}Lê Tiến Quyết\end{bfseries}\> \begin{bfseries}21520428\end{bfseries}\\
+\begin{bfseries}Nguyễn Viết Đức\end{bfseries}\> \begin{bfseries}22520273\end{bfseries}\\
+\begin{bfseries}Huỳnh Nhật Minh\end{bfseries}\> \begin{bfseries}22520862\end{bfseries}\\
+\begin{bfseries}Bùi Nhật Phi\end{bfseries}\> \begin{bfseries}22521078\end{bfseries}\\
+\end{tabbing}
+%End: Bìa%
+\vspace{10pt}
+\end{titlepage}
+\newpage
+\tableofcontents
+\newpage
+\chapter{Giới thiệu về Git, Github và giao diện cơ bản}
+\chapter{Các tập lệnh cơ bản}
+
+\section{git clone}
+\vspace{5pt}
+\centerline{\textbf{git clone + `URL`}}
+\textrm{Mục đích phổ biến nhất của \textbf{git clone} là tạo một thư mục mới có tên giống tên của Repository đã tồn tại trên Github, bao gồm tất cả các files, branches và commits vào trong máy.}
+
+\section{git branch}
+\textrm{Với cú pháp \textbf{git branch} thì dùng để kiểm tra branch hiện tại mà chúng ta đang thực hiện.}
+\newline
+\textrm{Để xem tất cả các branch hiện đang có thì ta dùng câu lệnh:}
+\newline
+\centerline{\textbf{git branch -r}}
+\newline
+\textrm{Ngoài ra để tạo một branch mới thì chúng ta sử dụng câu lệnh:}
+\newline
+\centerline{\textbf{git branch + `Name of new branch`}}
+
+\section{git add}
+\textrm{Sau khi thay đổi dữ liệu ở các files thì bạn cần cập nhật lại các files lên Staging Area với câu lệnh:}
+\newline
+\centerline{\textbf{git add .}}
+
+\section{git commit}
+\textrm{Ngay sau khi thực hiện câu lệnh \textbf{git add .} ở 2.3 thì cần sử dụng câu lệnh Commit để lưu lại những thay đổi trong Repo:}
+\newline
+\centerline{\textbf{git commit -m + `Message about changes`}}
+
+\section{git push}
+\textrm{Khi đã thực hiện câu lệnh Commit ở 2.4 thì thông tin mới chỉ được cập nhật lên Local Repository.}
+\newline
+\textrm{Để cập nhật lên server thì dùng câu lệnh sau:}
+\newline
+\centerline{\textbf{git push origin + `Name of branch`}}
+\newline
+\textrm{Muốn xóa một branch nào đó trên server thì ta có thể dùng:}
+\newline
+\centerline{\textbf{git push origin --delete + `Name of branch to delete`}}
+
+\section{git log}
+\textrm{Sử dụng câu lệnh \textbf{git log} sẽ cho chúng ta biết thông tin về \textit{người commit, ngày giờ, message} của những lần commit đó.}
+
+\section{git pull}
+\textrm{Sau một khoảng thời gian nào đó, sẽ có những thay đổi dữ liệu các files ở trên server. Để cập nhật những thay đổi đó về branch hiện tại trên máy thì chúng ta cần sử dụng câu lệnh:}
+\newline
+\centerline{\textbf{git pull origin + `Name of branch`}}
+
+\section{git checkout}
+\textrm{Để làm việc trên một nhánh nào đó thì chúng ta cần di chuyển tới nhánh đó với câu lệnh:}
+\newline
+\centerline{\textbf{git checkout + `Name of branch`}}
+
+\section{git merge}
+\textrm{Sau khi cập nhật các file và push lên branch mới. Giả sử bây giờ mình cần ghép các files vào nhánh gốc (\textbf{main}).}
+\newline
+\textrm{Đầu tiên, chúng ta cần di chuyển tới nhánh gốc với câu lệnh:}
+\newline
+\centerline{\textbf{git checkout main}}
+\newline
+\textrm{Sau đó để gộp branch cần gộp vào nhánh gốc thì chúng ta dùng lệnh \textbf{merge}:}
+\newline
+\centerline{\textbf{git merge + `Name of branch to merge`}}
+
+\chapter{Tổng kết}
+
+\begin{thebibliography}{9}
+\bibitem{doc1}
+\url{https://viblo.asia/p/nhung-lenh-git-co-ban-can-nho-V3m5W1OyZO7}
+
+\bibitem{doc2}
+\url{https://thachpham.com/tools/hieu-them-ve-commit-va-staging-area-git.html}
+
+\bibitem{doc3}
+\url{https://www.nobledesktop.com/learn/git/git-branches}
+
+\bibitem{doc4}
+\url{https://www.youtube.com/watch?v=1JuYQgpbrW0&t=515s}
+
+\bibitem{doc5}
+\url{https://vn.got-it.ai/blog/git-commit-la-gi-git-commit-duoc-su-dung-nhu-the-nao}
+\end{thebibliography}
+
+\end{document}
+
