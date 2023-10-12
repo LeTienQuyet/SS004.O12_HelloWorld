@@ -12,6 +12,7 @@ path_dog = ['DOG_ANS.png','DOG_ANS_1.jpg']
 path_cat = ['CAT_ANS.jpg','CAT_ANS_1.png','CAT_ANS_2.png','CAT_ANS_3.png']
 path_dog_ans = random.choice(path_dog)
 path_cat_ans = random.choice(path_cat)
+
 def input_process(path):
     img = Image.open(path)
     img_origi = np.array(img)
@@ -19,12 +20,6 @@ def input_process(path):
     img_resized = np.array(img_resized)
     img_resized = np.expand_dims(img_resized, axis=0)
     return img_resized
-
-def imshow(path):
-    img = Image.open(path)
-    plt.imshow(img)
-    plt.show()
-
 
 model = tf.keras.models.load_model('MyModel.keras')
 
@@ -43,8 +38,10 @@ if file is not None:
     column_1, column_2 = st.columns(2)
     with column_1:
         st.header('Mô hình dự đoán')
+        
         with st.spinner('Loading'):
             time.sleep(3)
+
         if output >= 0.5:
             dog_ans = Image.open(path_dog_ans)
             st.image(dog_ans, 'Con Chó')
